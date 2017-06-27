@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1">
+<title layout:title-pattern="$CONTENT_TITLE - $DECORATOR_TITLE">Insert title here</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style type="text/css" th:replace="/admin/share/_style"></style>
+</head>
+<body class="sidebar_main_open">
+	<div th:replace="/admin/share/_head"></div>
+	<div th:replace="/admin/share/_sidebarmain"></div>
+	 <div id="page_content">
+        <div id="page_content_inner">
+        	<div layout:fragment="content"></div>
+        </div>
+     </div>
+     <div th:replace="/admin/share/_sidebar-secondary"></div>
+     <div th:replace="/admin/share/_script"></div>
+</body>
+</html>

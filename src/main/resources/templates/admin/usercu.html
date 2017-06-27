@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/adminlayout">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	
+<head>
+<meta charset="ISO-8859-1">
+<title>User</title>
+
+<link th:href="@{/resources/cu.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div layout:fragment="content" class="container">
+	<h1  th:text="#{infor}" style="font-family: 'Khmer OS Battambang';">Student information</h1>
+	<form th:action="@{/add-user}" method="post" th:object="${USER}">
+		<table border="0px" >
+			
+			<tr>
+				<td th:text="#{name1}" style="font-family: 'Khmer OS Battambang';">Name:</td>
+				<td><input class="form-control" th:field="*{name}"  placeholder="Input Name..."/> </td>
+			</tr>
+			
+			<tr>
+				<td th:text="#{email}" style="font-family: 'Khmer OS Battambang';">Email</td>
+				<td><input class="form-control" th:field="*{email}"  placeholder="Input Email..."/> </td>
+			</tr>
+			<tr>
+				<td th:text="#{sex}" name="gender" style="font-family: 'Khmer OS Battambang';">Gender: </td>
+				<td>
+					<select th:field="*{gender}" >
+						<option value="M">M</option>
+						<option value="F">F</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td th:text="#{phone}" style="font-family: 'Khmer OS Battambang';">Phone Numeber:</td>
+				<td><input class="form-control" th:field="*{phonenumber}"  placeholder="Input phone Number..."/> </td>
+			</tr>
+			<tr>
+				<td style="font-family: 'Khmer OS Battambang';">Status:</td>
+				<td><input class="form-control" th:field="*{status}" placeholder="Input phone Status..."/> </td>
+			</tr>
+			<!-- <tr>
+				<td  name="user" style="font-family: 'Khmer OS Battambang';">User-hash:</td>
+				<td><input class="form-control" th:field="*{user_hash}" placeholder="Input User-Hash..."/> </td>
+			</tr> -->
+			<tr>
+				<td colspan="2">
+					<button type="submit" style="margin-left:45px; margin-top: 5px; margin-bottom: 5px; width: 75px;color: blue;height:35px;font-size:18px;font-family: 'Khmer OS Battambang' ">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+		
+	</form>
+	
+	<!-- <table border="1px solid black" style="width:100%;">
+		<tr>
+			 <th th:text="#{id}" style="font-family: 'Khmer OS Battambang';">ID</th>
+			<th th:text="#{name1}" style="font-family: 'Khmer OS Battambang';">name</th>
+			<th th:text="#{gender}" style="font-family: 'Khmer OS Battambang';">Gender</th>
+			<th th:text="#{email}" style="font-family: 'Khmer OS Battambang';">Email</th>
+			<th th:text="#{phone}" style="font-family: 'Khmer OS Battambang';">Phone number</th>
+			<th th:text="#{status}" style="font-family: 'Khmer OS Battambang';">Status</th>
+			<th th:text="#{hash}" style="font-family: 'Khmer OS Battambang';">User hash</th>
+			<th th:text="#{creat}" style="font-family: 'Khmer OS Battambang';">Create Date</th>
+			<th​​ th:text="#{remove}" style="font-family: 'Khmer OS Battambang';" style="width:10%;">Remove</th>
+		</tr>
+		<tr th:each="l:${KEY}">
+			<td th:text="${l.id}"></td>
+			<td th:text="${l.name}"></td>
+			<td th:text="${l.gender}"></td>
+			<td th:text="${l.email}"></td>
+			<td th:text="${l.phonenumber}"></td>
+			<td th:text="${l.status}"></td>
+			<td th:text="${l.user_hash}"></td>
+			<td th:text="${l.created_date}"></td>
+			<td>
+				<a th:href="@{/remove-student/{userhash}(userhash=${l.getUser_hash()})}">
+					<span class="glyphicon glyphicon-trash" arial-label="true">Delete</span>
+				</a>
+			</td>
+		</tr>
+	</table>  -->
+	</div>
+</body>
+</html>

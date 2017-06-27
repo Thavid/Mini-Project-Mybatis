@@ -1,0 +1,47 @@
+ <!-- main sidebar -->
+    <aside id="sidebar_main">
+        <a href="#" class="uk-close sidebar_main_close_button"></a>
+        <div class="sidebar_main_header">
+            <div class="sidebar_logo"><a href="index.html"><img th:src="@{/resources/assets/img/logo_main.png}" alt="" height="15" width="71"/></a></div>
+            <div class="sidebar_actions">
+                <select id="lang_switcher" name="lang_switcher">
+                    <option value="gb" selected>English</option>
+                </select>
+            </div>
+        </div>
+        <div class="menu_section">
+            <ul>
+                <li class="act_section">
+                    <a href="http://localhost:8080/">
+                        <span class="menu_icon uk-icon-th-large"></span>
+                        <span th:text="#{dashboard}" style="font-family: 'Khmer OS Battambang';">Dashboard</span>
+                    </a>
+                </li>
+          
+                <li>
+                    <a href="http://localhost:8080/user" >
+                        <span class="menu_icon uk-icon-user"></span>
+                        <span th:text="#{userlist}" style="font-family: 'Khmer OS Battambang';" >User List</span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/usercu">
+                        <span class="menu_icon uk-icon-list-alt"></span>
+                        <span th:text="#{usercu}" style="font-family: 'Khmer OS Battambang';">User-CU</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/role-list">
+                        <span class="menu_icon uk-icon-newspaper-o"></span>
+                       <span th:text="#{rolelist}" style="font-family: 'Khmer OS Battambang';"> Role-List</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="http://localhost:8080/rolecu">
+                        <span class="menu_icon uk-icon-folder-o"></span>
+                       <span th:text="#{rolecu}" style="font-family: 'Khmer OS Battambang';">Role-cu</span>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- main sidebar end -->

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/adminlayout">
+<head>
+<meta charset="ISO-8859-1">
+<title>List-User</title>
+<style type="text/css">
+table{
+	border-collapse: collapse;
+}
+	td{
+		/* border:1px solid black; */
+		font-size: 15px;
+		text-align: center;
+	}
+	th{
+		font-size: 20px;
+		color: red;
+	}
+	input{
+		width: 300px;
+		height: 30px;
+		border-radius: 5px;
+	}
+</style>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1  th:text="#{ro1}" style="font-family: 'Khmer OS Battambang';">Create Role User</h1>
+	<form action="/add-user" method="post">
+		<table border="0px" >
+			<tr style="padding: 5px;">
+				<td th:text="#{id}" style="font-family: 'Khmer OS Battambang';text-align: center;"​​​​​​>ID:</td>
+				<td><input class="form-control" name="id" placeholder="Input Id..."/> </td>
+			</tr>
+			
+			<tr>
+				<td th:text="#{name1}" style="font-family: 'Khmer OS Battambang';text-align: center;">Name:</td>
+				<td><input class="form-control" name="name"  placeholder="Input Name..."/> </td>
+			</tr>
+			
+			<tr>
+				<td th:text="#{role}" style="font-family: 'Khmer OS Battambang';text-align: center;">Email:</td>
+				<td><input class="form-control" name="email" placeholder="Input Role..."/> </td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button th:text="#{submit}" style="font-family: 'Khmer OS Battambang';" type="submit" style="margin-left:45px; margin-top: 5px; margin-bottom: 5px; width: 70px;color: blue;height:30px;">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<div class="md-card-content">
+                    <div class="uk-overflow-container">
+                        <table class="uk-table">
+                            <caption>Role List</caption>
+                            <thead>
+                            <tr>
+                                <th th:text="#{id}" style="font-family: 'Khmer OS Battambang'; color: red;font-size:19px;text-align: center; ">ID User</th>
+                                <th th:text="#{name1}" style="font-family: 'Khmer OS Battambang';color: red;font-size:19px; text-align: center;">Name</th>
+                                <th th:text="#{role}" style="font-family: 'Khmer OS Battambang';color: red;font-size:19px; text-align: center;">Role</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>Sokheng</td>
+                                <td>Back office</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Bunnam</td>
+                                <td>Deverloper</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Mony</td>
+                                <td>Back end</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Neka</td>
+                                <td>Back end</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <h1 th:text="#{thank}" style="font-family: 'Khmer OS Battambang';color:red;font-size:35px;text-align: center;">Thank You....</h1>
+	</div>
+</body>
+</html>

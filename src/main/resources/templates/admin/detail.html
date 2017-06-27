@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/adminlayout">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	
+<head>
+<meta charset="ISO-8859-1">
+<title>Detail</title>
+<link th:href="@{/cu.css}" rel="stylesheet" type="text/css">
+<style type="text/css">
+	th,td{
+		font-size: 17px;
+	}
+</style>
+</head>
+<body>
+	<div layout:fragment="content" class="container">
+	<h1 style="font-family: 'Khmer OS Battambang';">Detail user information</h1>
+		<table border="0px" >
+			<tr>
+				<td th:text="#{name1}" style="font-family: 'Khmer OS Battambang';">Name:</td>
+				<td><span th:text="${USER.name}"></span></td>
+			</tr>
+			
+			<tr>
+				<td th:text="#{email}" style="font-family: 'Khmer OS Battambang';">Email</td>
+				<td><span th:text="${USER.email}"></span></td>
+			</tr>
+			<tr>
+				<td th:text="#{sex}" name="gender" style="font-family: 'Khmer OS Battambang';">Gender: </td>
+				<td><span th:text="${USER.gender}"></span></td>
+			</tr>
+			<tr>
+				<td th:text="#{phone}" style="font-family: 'Khmer OS Battambang';">Phone Numeber:</td>
+				<td><span th:text="${USER.phonenumber}"></span></td>
+			</tr>
+			<tr>
+				<td th:text="#{status}" style="font-family: 'Khmer OS Battambang';">Status:</td>
+				<td><span th:text="${USER.status}"></span></td>
+			</tr>
+		</table>
+			<button type="submit" style="margin-left:45px; margin-top: 5px; margin-bottom: 5px; width: 75px;color: blue;height:35px;font-size:18px;font-family: 'Khmer OS Battambang' ">
+				<a href="http://localhost:8080/user">Back</a> 
+			</button>
+	</div>
+</body>
+</html>
